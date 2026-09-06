@@ -19,7 +19,7 @@ define('FIRMA_ADRESA','Stanoja Glavasa 35, Velika Plana');
 define('DB_HOST', 'localhost');
 define('DB_NAME', 'finishline');
 define('DB_USER', 'root');
-define('DB_PASS', '');
+define('DB_PASS', 'POGLEDATI_CONFIG_LOCAL');
 define('DB_CHARSET', 'utf8mb4');
 
 // --- Putanje --------------------------------------------------------------
