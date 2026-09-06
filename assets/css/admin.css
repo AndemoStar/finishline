@@ -1,0 +1,537 @@
+/* =====================================================================
+   Finish Line - stilovi administracije
+   ===================================================================== */
+
+.telo-admina { background: #f2f4f7; }
+
+.admin-omot { display: flex; min-height: 100vh; }
+
+/* --- Bocni meni ------------------------------------------------------ */
+
+.admin-bocna {
+    width: 260px;
+    flex-shrink: 0;
+    background: var(--mastilo);
+    color: rgba(255, 255, 255, .7);
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+.admin-logo {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    padding: 22px 22px;
+    border-bottom: 1px solid rgba(255, 255, 255, .08);
+}
+.admin-logo strong { color: #fff; font-size: 1.2rem; font-weight: 600; letter-spacing: -.02em; }
+.admin-logo strong span { color: var(--akcenat); }
+.admin-logo small { font-size: .66rem; letter-spacing: .12em; text-transform: uppercase; color: rgba(255, 255, 255, .4); }
+
+.admin-meni { padding: 16px 12px; flex-grow: 1; }
+.admin-meni-naslov {
+    display: block;
+    font-size: .7rem;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, .35);
+    padding: 16px 12px 8px;
+}
+.admin-meni a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 11px 12px;
+    border-radius: var(--radijus);
+    color: rgba(255, 255, 255, .7);
+    font-size: .93rem;
+    margin-bottom: 2px;
+    transition: all var(--prelaz);
+}
+.admin-meni a:hover { background: rgba(255, 255, 255, .06); color: #fff; }
+.admin-meni a.aktivan { background: var(--akcenat); color: var(--mastilo); font-weight: 600; }
+.admin-meni a i { font-size: 1.05rem; width: 20px; }
+
+.admin-znacka {
+    margin-left: auto;
+    background: var(--akcenat);
+    color: var(--mastilo);
+    font-size: .72rem;
+    font-weight: 700;
+    min-width: 21px;
+    height: 21px;
+    display: grid;
+    place-items: center;
+    border-radius: 11px;
+    padding: 0 6px;
+}
+.admin-meni a.aktivan .admin-znacka { background: var(--mastilo); color: var(--akcenat); }
+
+.admin-odjava { padding: 16px 20px; border-top: 1px solid rgba(255, 255, 255, .08); }
+.admin-odjava button {
+    width: 100%;
+    background: none;
+    border: 1px solid rgba(255, 255, 255, .16);
+    color: rgba(255, 255, 255, .7);
+    padding: 10px;
+    border-radius: var(--radijus);
+    cursor: pointer;
+    font-size: .9rem;
+    transition: all var(--prelaz);
+}
+.admin-odjava button:hover { background: rgba(255, 80, 80, .15); border-color: rgba(255, 80, 80, .4); color: #ff9b9b; }
+
+/* --- Glavni deo ------------------------------------------------------ */
+
+.admin-glavni { flex-grow: 1; min-width: 0; }
+
+.admin-traka {
+    background: #fff;
+    border-bottom: 1px solid #e3e7ec;
+    padding: 16px 28px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+.admin-traka h1 {
+    font-size: 1.3rem;
+    margin: 0;
+    text-transform: none;
+    letter-spacing: 0;
+    flex-grow: 1;
+}
+
+.admin-hamburger {
+    display: none;
+    background: none;
+    border: 1px solid #e3e7ec;
+    border-radius: var(--radijus);
+    padding: 6px 11px;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.admin-korisnik { display: flex; align-items: center; gap: 10px; }
+.admin-avatar {
+    width: 40px;
+    height: 40px;
+    display: grid;
+    place-items: center;
+    background: var(--mastilo);
+    color: var(--akcenat);
+    border-radius: 50%;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.05rem;
+}
+.admin-korisnik strong { display: block; font-size: .9rem; line-height: 1.2; }
+.admin-korisnik small { color: var(--tekst-blagi); font-size: .78rem; text-transform: capitalize; }
+
+.admin-sadrzaj { padding: 24px 28px 40px; }
+
+/* --- Kartice sa brojevima -------------------------------------------- */
+
+.admin-kartica {
+    display: block;
+    background: #fff;
+    border: 1px solid #e3e7ec;
+    border-radius: var(--radijus-l);
+    padding: 20px;
+    height: 100%;
+    transition: all var(--prelaz);
+    color: var(--tekst);
+}
+.admin-kartica:hover { transform: translateY(-3px); box-shadow: var(--senka-m); color: var(--tekst); }
+.admin-kartica.akcenat { border-color: var(--akcenat); border-top: 3px solid var(--akcenat); }
+
+.admin-kartica-ikona {
+    width: 42px;
+    height: 42px;
+    display: grid;
+    place-items: center;
+    background: var(--pesak);
+    color: var(--akcenat-tamni);
+    border-radius: var(--radijus);
+    font-size: 1.15rem;
+    margin-bottom: 14px;
+}
+.admin-kartica-broj {
+    display: block;
+    font-family: 'Oswald', sans-serif;
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1;
+    color: var(--mastilo);
+}
+.admin-kartica-opis {
+    display: block;
+    font-size: .82rem;
+    color: var(--tekst-blagi);
+    margin-top: 4px;
+}
+
+/* --- Paneli ---------------------------------------------------------- */
+
+.admin-panel {
+    background: #fff;
+    border: 1px solid #e3e7ec;
+    border-radius: var(--radijus-l);
+    padding: 22px;
+}
+.admin-panel-vrh {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    padding-bottom: 16px;
+    margin-bottom: 18px;
+    border-bottom: 1px solid #eef1f4;
+}
+.admin-panel-vrh h2 {
+    font-size: 1.12rem;
+    margin: 0;
+    text-transform: none;
+    letter-spacing: 0;
+}
+.admin-napomena { font-size: .82rem; color: var(--tekst-blagi); }
+.admin-brojka {
+    background: var(--pesak);
+    color: var(--tekst-blagi);
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: .8rem;
+    font-weight: 600;
+}
+.admin-prazno {
+    text-align: center;
+    color: var(--tekst-blagi);
+    padding: 30px 16px;
+    margin: 0;
+    font-size: .93rem;
+}
+
+/* --- Tabele ---------------------------------------------------------- */
+
+.admin-tabela { width: 100%; border-collapse: collapse; min-width: 700px; }
+.admin-tabela th {
+    text-align: left;
+    padding: 11px 14px;
+    font-size: .76rem;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--tekst-blagi);
+    background: #f8f9fb;
+    border-bottom: 1px solid #e3e7ec;
+    white-space: nowrap;
+}
+.admin-tabela td {
+    padding: 13px 14px;
+    border-bottom: 1px solid #eef1f4;
+    font-size: .9rem;
+    vertical-align: middle;
+}
+.admin-tabela tbody tr:hover { background: #fafbfc; }
+.admin-tabela tr:last-child td { border-bottom: none; }
+
+.minijatura {
+    width: 56px;
+    height: 42px;
+    object-fit: cover;
+    border-radius: var(--radijus);
+    border: 1px solid #e3e7ec;
+}
+
+.celija-poruka { max-width: 260px; }
+.poruka-kratka { display: block; color: var(--tekst-blagi); }
+.veza-dugme {
+    background: none;
+    border: none;
+    padding: 0;
+    color: var(--akcenat-tamni);
+    font-size: .8rem;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.ikona-dugme {
+    display: inline-grid;
+    place-items: center;
+    width: 32px;
+    height: 32px;
+    border: 1px solid #e3e7ec;
+    background: #fff;
+    border-radius: var(--radijus);
+    color: var(--tekst-blagi);
+    cursor: pointer;
+    transition: all var(--prelaz);
+    margin-left: 4px;
+}
+.ikona-dugme:hover { background: var(--mastilo); border-color: var(--mastilo); color: #fff; }
+.ikona-dugme.opasno:hover { background: var(--greska); border-color: var(--greska); color: #fff; }
+
+.admin-ikonica {
+    width: 34px;
+    height: 34px;
+    display: grid;
+    place-items: center;
+    background: var(--pesak);
+    color: var(--akcenat-tamni);
+    border-radius: var(--radijus);
+}
+
+/* --- Stanja / statusi ------------------------------------------------ */
+
+.stanje {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: .74rem;
+    font-weight: 600;
+    letter-spacing: .04em;
+    text-transform: capitalize;
+    white-space: nowrap;
+}
+.stanje-nov      { background: #fff3d9; color: #96650a; }
+.stanje-u_obradi { background: #e0edff; color: #1c4f96; }
+.stanje-zavrsen  { background: #e2f6ec; color: #14683f; }
+.stanje-odbijen  { background: #fde9e7; color: #a3291c; }
+.stanje-izdvojen { background: var(--akcenat); color: var(--mastilo); margin-left: 6px; }
+
+.izbor-statusa {
+    border: 1px solid #e3e7ec;
+    border-radius: var(--radijus);
+    padding: 6px 10px;
+    font-size: .82rem;
+    font-weight: 600;
+    cursor: pointer;
+    background-color: #fff;
+    transition: all var(--prelaz);
+}
+.izbor-statusa:focus { outline: none; border-color: var(--akcenat); box-shadow: 0 0 0 3px rgba(240, 160, 42, .18); }
+.izbor-statusa[disabled] { opacity: .6; }
+
+.filteri-statusa { display: flex; gap: 8px; flex-wrap: wrap; }
+.filteri-statusa .filter { padding: 6px 14px; font-size: .8rem; }
+
+/* --- Grafikon -------------------------------------------------------- */
+
+.grafikon {
+    display: flex;
+    align-items: flex-end;
+    gap: 6px;
+    height: 190px;
+    padding-top: 20px;
+}
+.grafikon-stub {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    height: 100%;
+    gap: 6px;
+}
+.grafikon-traka {
+    width: 100%;
+    background: var(--akcenat);
+    border-radius: 3px 3px 0 0;
+    position: relative;
+    min-height: 6px;
+    transition: background var(--prelaz);
+    display: flex;
+    justify-content: center;
+}
+.grafikon-stub:hover .grafikon-traka { background: var(--mastilo); }
+.grafikon-broj {
+    position: absolute;
+    top: -19px;
+    font-size: .72rem;
+    font-weight: 700;
+    color: var(--tekst-blagi);
+}
+.grafikon-oznaka { font-size: .68rem; color: var(--tekst-blagi); white-space: nowrap; }
+
+/* --- Forma administracije -------------------------------------------- */
+
+.admin-forma .oznaka { font-size: .82rem; }
+
+.prekidac {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    padding: 8px 0;
+    font-size: .92rem;
+}
+.prekidac input { position: absolute; opacity: 0; pointer-events: none; }
+.prekidac-telo {
+    width: 42px;
+    height: 24px;
+    background: #d5dae1;
+    border-radius: 12px;
+    position: relative;
+    transition: background var(--prelaz);
+    flex-shrink: 0;
+}
+.prekidac-telo::after {
+    content: '';
+    position: absolute;
+    left: 3px;
+    top: 3px;
+    width: 18px;
+    height: 18px;
+    background: #fff;
+    border-radius: 50%;
+    transition: transform var(--prelaz);
+}
+.prekidac input:checked + .prekidac-telo { background: var(--akcenat); }
+.prekidac input:checked + .prekidac-telo::after { transform: translateX(18px); }
+.prekidac input:focus-visible + .prekidac-telo { outline: 3px solid var(--akcenat); outline-offset: 2px; }
+
+/* --- Zona za otpremanje slika ---------------------------------------- */
+
+.zona-otpremanja {
+    border: 2px dashed #d5dae1;
+    border-radius: var(--radijus-l);
+    padding: 22px;
+    text-align: center;
+    cursor: pointer;
+    transition: all var(--prelaz);
+    position: relative;
+    background: #fbfcfd;
+}
+.zona-otpremanja:hover, .zona-otpremanja.preko {
+    border-color: var(--akcenat);
+    background: #fffaf1;
+}
+.zona-otpremanja.mala { padding: 16px; margin-top: 12px; }
+
+.zona-prazna i { font-size: 2rem; color: #b9c1cb; display: block; margin-bottom: 8px; }
+.zona-prazna strong { display: block; font-size: .93rem; color: var(--mastilo); }
+.zona-prazna span { display: block; font-size: .84rem; color: var(--tekst-blagi); }
+.zona-prazna small { display: block; margin-top: 6px; font-size: .75rem; color: #a3acb8; }
+
+.zona-pregled { position: relative; }
+.zona-pregled img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: var(--radijus);
+}
+
+.zona-ukloni {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    width: 28px;
+    height: 28px;
+    display: grid;
+    place-items: center;
+    background: rgba(14, 17, 22, .78);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: .75rem;
+    transition: background var(--prelaz);
+}
+.zona-ukloni:hover { background: var(--greska); }
+
+.zona-napredak { padding: 8px 0; }
+.traka-napretka {
+    height: 6px;
+    background: #e3e7ec;
+    border-radius: 3px;
+    overflow: hidden;
+    margin-bottom: 6px;
+}
+.traka-napretka span {
+    display: block;
+    height: 100%;
+    width: 0;
+    background: var(--akcenat);
+    transition: width .2s ease;
+}
+.zona-napredak small { color: var(--tekst-blagi); font-size: .8rem; }
+
+/* --- Mreza fotografija ----------------------------------------------- */
+
+.mreza-slika {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+}
+.stavka-slike { position: relative; margin: 0; }
+.stavka-slike img {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: var(--radijus);
+    border: 1px solid #e3e7ec;
+}
+.stavka-slike .zona-ukloni { width: 24px; height: 24px; font-size: .68rem; }
+
+/* --- Utisci u administraciji ----------------------------------------- */
+
+.kartica-utisak-admin {
+    background: #fff;
+    border: 1px solid #e3e7ec;
+    border-radius: var(--radijus-l);
+    padding: 20px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.kartica-utisak-admin.ceka { border-left: 3px solid var(--akcenat); background: #fffdf8; }
+.utisak-admin-vrh {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+.kartica-utisak-admin .utisak-tekst { font-size: .9rem; }
+.utisak-radnje {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin-top: 16px;
+    padding-top: 14px;
+    border-top: 1px solid #eef1f4;
+}
+.utisak-radnje form { margin: 0; }
+.utisak-radnje .dugme { padding: 8px 16px; font-size: .82rem; }
+
+.brze-radnje .dugme { justify-content: flex-start; }
+
+/* --- Responzivno ----------------------------------------------------- */
+
+@media (max-width: 991.98px) {
+    .admin-bocna {
+        position: fixed;
+        left: 0;
+        top: 0;
+        z-index: 1050;
+        transform: translateX(-100%);
+        transition: transform var(--prelaz);
+        box-shadow: var(--senka-l);
+    }
+    .admin-bocna.otvorena { transform: translateX(0); }
+    .admin-hamburger { display: block; }
+    .admin-sadrzaj { padding: 18px 16px 32px; }
+    .admin-traka { padding: 14px 16px; }
+    .admin-traka h1 { font-size: 1.05rem; }
+    .admin-korisnik div { display: none; }
+}
+
+@media (max-width: 575.98px) {
+    .mreza-slika { grid-template-columns: repeat(2, 1fr); }
+    .admin-panel { padding: 16px; }
+}
