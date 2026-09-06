@@ -1,0 +1,14 @@
+# Lokalna konfiguracija sa lozinkom baze - nikad u repozitorijum
+config/config.local.php
+
+# Otpremljene slike korisnika
+assets/uploads/*
+!assets/uploads/.gitkeep
+!assets/uploads/.htaccess
+
+# Sistemski fajlovi
+.DS_Store
+Thumbs.db
+*.log
+.idea/
+.vscode/

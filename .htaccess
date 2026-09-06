@@ -1,0 +1,27 @@
+# Finish Line - preusmeravanje svih zahteva na front controller
+Options -Indexes
+DirectoryIndex index.php
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Postojeci fajlovi i folderi (css, js, slike) se serviraju direktno
+    RewriteCond %{REQUEST_FILENAME} -f [OR]
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteRule ^ - [L]
+
+    # Sve ostalo ide kroz index.php
+    RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]
+</IfModule>
+
+# Sakrivanje osetljivih fajlova
+<FilesMatch "^(\.gitignore|\.env|composer\.(json|lock)|README\.md)$">
+    Require all denied
+</FilesMatch>
+
+# Osnovne bezbednosne zaglavlja
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
