@@ -8,7 +8,7 @@
     <div class="container">
         <div class="row align-items-center g-5">
             <div class="col-lg-6">
-                <h1>Završni radovi, urađeni kako treba</h1>
+                <h1>Vaš prostor,<br>Naša završna linija</h1>
                 <p class="hero-uvod">
                     Gletovanje, krečenje, gips i dekorativne obrade za stanove, kuće i
                     poslovne prostore na teritoriji Srbije. Fiksna cena iz ponude i čist prostor
