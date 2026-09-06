@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img">
+  <rect width="800" height="600" fill="#efe9e0"/>
+  <g fill="none" stroke="#c9c0b3" stroke-width="10" stroke-linecap="round">
+    <rect x="250" y="200" width="300" height="210" rx="12"/>
+    <circle cx="335" cy="270" r="26"/>
+    <path d="M262 396 L370 300 L440 360 L500 315 L538 350"/>
+  </g>
+  <text x="400" y="470" text-anchor="middle" font-family="Arial, sans-serif" font-size="26" fill="#a99f90">Finish Line</text>
+</svg>
