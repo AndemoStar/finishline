@@ -2,18 +2,13 @@
 --  Finish Line - zavrsni gradjevinski radovi
 --  Struktura baze i demo podaci
 --
---  Uvoz: phpMyAdmin -> Import -> izabrati ovaj fajl
---  (baza "finishline" se pravi automatski, ne treba je praviti rucno)
+--  Uvoz: izabrati svoju InfinityFree bazu u phpMyAdmin-u, pa Import -> ovaj fajl
+--  Napomena za InfinityFree: prvo napraviti bazu u kontrolnom panelu,
 -- =====================================================================
 
 SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
 
-CREATE DATABASE IF NOT EXISTS `finishline`
-    DEFAULT CHARACTER SET utf8mb4
-    COLLATE utf8mb4_unicode_ci;
-
-USE `finishline`;
 
 -- ---------------------------------------------------------------------
 -- Korisnici administracije
