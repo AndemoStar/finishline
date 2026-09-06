@@ -9,7 +9,7 @@ Ispitni projekat **PHP + MySQL, MVC arhitektura**, bez upotrebe gotovog radnog o
 
 | Uloga | Email | Lozinka | Pristup |
 | Administrator | `admin@finishline.rs` | `Demo1234` | pun pristup administraciji |
-| Urednik | `urednik@finishline.rs` | `Demo1234` | **nema** pristup — služi za proveru kontrole prava |
+| Urednik | `urednik@finishline.rs` | `Demo1234` | **nema** pristup, služi za proveru kontrole prava |
 
 demo baza
 
