@@ -1,5 +1,6 @@
-# Lokalna konfiguracija sa lozinkom baze - nikad u repozitorijum
+# Konfiguracija sa lozinkom baze - nikad u repozitorijum
 config/config.local.php
+config/config.infinityfree.php
 
 # Otpremljene slike korisnika
 assets/uploads/*
