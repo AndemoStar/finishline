@@ -10,9 +10,9 @@ declare(strict_types=1);
 // --- Podaci o firmi -------------------------------------------------------
 define('APP_NAME',    'Finish Line');
 define('APP_SLOGAN',  'Zavrsni gradjevinski radovi');
-define('FIRMA_TEL',   '+381 64 123 4567');
+define('FIRMA_TEL',   '+381 60 33 44 996');
 define('FIRMA_MAIL',  'info@finishline.rs');
-define('FIRMA_ADRESA','Bulevar oslobodjenja 114, Novi Sad');
+define('FIRMA_ADRESA','Stanoja Glavasa 35, Velika Plana');
 
 
 // --- Baza podataka --------------------------------------------------------

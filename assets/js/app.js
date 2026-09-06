@@ -128,7 +128,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     /* --- Pojavljivanje elemenata pri skrolovanju --- */
-    const zaPojavu = document.querySelectorAll('.odeljak .kartica-usluga, .odeljak .kartica-rad, .korak, .kartica-utisak');
+    const zaPojavu = document.querySelectorAll('.odeljak .kartica-usluga, .odeljak .kartica-rad');
 
     if ('IntersectionObserver' in window && zaPojavu.length) {
         zaPojavu.forEach(el => el.classList.add('pojava'));

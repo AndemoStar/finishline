@@ -13,7 +13,6 @@ declare(strict_types=1);
  *   GET  api/usluge                    - lista usluga
  *   GET  api/radovi?usluga=3&limit=9   - radovi, sa filtriranjem i strananjem
  *   GET  api/radovi/5                  - jedan rad sa fotografijama
- *   GET  api/utisci                    - odobreni utisci klijenata
  *   GET  api/statistika                - brojevi za pocetnu stranu
  *   POST api/procena                   - procena cene na osnovu kvadrature
  *   POST api/upiti                     - slanje upita sa sajta
@@ -99,36 +98,12 @@ final class ApiController extends Controller
         $this->json(['uspeh' => true, 'podaci' => $podaci]);
     }
 
-    /** GET api/utisci?limit=6 */
-    public function utisci(): void
-    {
-        $this->samoMetoda(['GET']);
-
-        $model  = $this->model('Utisak');
-        $utisci = $model->odobreni($this->ceoBroj('limit', 6));
-
-        $this->json([
-            'uspeh'    => true,
-            'ukupno'   => $model->prebrojOdobrene(),
-            'podaci'   => array_map(static function (array $u): array {
-                return [
-                    'id'       => (int) $u['id'],
-                    'ime'      => $u['ime'],
-                    'lokacija' => $u['lokacija'],
-                    'tekst'    => $u['tekst'],
-                    'datum'    => datum($u['kreiran']),
-                ];
-            }, $utisci),
-        ]);
-    }
-
     /** GET api/statistika - brojevi koje pocetna strana animira. */
     public function statistika(): void
     {
         $this->samoMetoda(['GET']);
 
         $radovi = $this->model('Rad');
-        $utisci = $this->model('Utisak');
         $usluge = $this->model('Usluga');
 
         $this->json([
@@ -137,7 +112,6 @@ final class ApiController extends Controller
                 'radova'       => $radovi->prebrojJavne(),
                 'kvadratura'   => $radovi->ukupnaKvadratura(),
                 'usluga'       => $usluge->prebrojAktivne(),
-                'zadovoljnih'  => $utisci->prebrojOdobrene(),
                 'godina_iskustva' => 12,
             ],
         ]);

@@ -127,7 +127,6 @@
     background: var(--mastilo);
     color: var(--akcenat);
     border-radius: 50%;
-    font-family: 'Oswald', sans-serif;
     font-size: 1.05rem;
 }
 .admin-korisnik strong { display: block; font-size: .9rem; line-height: 1.2; }
@@ -163,7 +162,6 @@
 }
 .admin-kartica-broj {
     display: block;
-    font-family: 'Oswald', sans-serif;
     font-size: 2rem;
     font-weight: 600;
     line-height: 1;
@@ -477,37 +475,6 @@
     border: 1px solid #e3e7ec;
 }
 .stavka-slike .zona-ukloni { width: 24px; height: 24px; font-size: .68rem; }
-
-/* --- Utisci u administraciji ----------------------------------------- */
-
-.kartica-utisak-admin {
-    background: #fff;
-    border: 1px solid #e3e7ec;
-    border-radius: var(--radijus-l);
-    padding: 20px;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-}
-.kartica-utisak-admin.ceka { border-left: 3px solid var(--akcenat); background: #fffdf8; }
-.utisak-admin-vrh {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 12px;
-}
-.kartica-utisak-admin .utisak-tekst { font-size: .9rem; }
-.utisak-radnje {
-    display: flex;
-    gap: 8px;
-    align-items: center;
-    margin-top: 16px;
-    padding-top: 14px;
-    border-top: 1px solid #eef1f4;
-}
-.utisak-radnje form { margin: 0; }
-.utisak-radnje .dugme { padding: 8px 16px; font-size: .82rem; }
 
 .brze-radnje .dugme { justify-content: flex-start; }
 

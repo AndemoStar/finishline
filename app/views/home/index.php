@@ -11,7 +11,7 @@
                 <h1>Završni radovi, urađeni kako treba</h1>
                 <p class="hero-uvod">
                     Gletovanje, krečenje, gips i dekorativne obrade za stanove, kuće i
-                    poslovne prostore u Novom Sadu. Fiksna cena iz ponude i čist prostor
+                    poslovne prostore na teritoriji Srbije. Fiksna cena iz ponude i čist prostor
                     posle radova.
                 </p>
                 <div class="hero-dugmad">
@@ -128,7 +128,7 @@
 
             <div class="col-lg-6">
                 <span class="nadnaslov">O nama</span>
-                <h2>Dolazimo kada kažemo da ćemo doći</h2>
+                <h2>Kako radimo</h2>
                 <p class="uvodni-tekst">
                     Finish Line vodi ekipa koja zajedno radi već dvanaest godina.
                     Ne uzimamo više poslova nego što možemo da završimo, pa se termini ne pomeraju.
@@ -185,34 +185,8 @@
     </div>
 </section>
 
-<!-- ============ UTISCI ============ -->
-<section class="odeljak odeljak-sivi">
-    <div class="container">
-        <div class="zaglavlje-odeljka">
-            <div>
-                <span class="nadnaslov">Utisci</span>
-                <h2>Šta kažu klijenti</h2>
-            </div>
-        </div>
-
-        <div class="row g-4">
-            <?php foreach (array_slice($utisci, 0, 3) as $u): ?>
-                <div class="col-md-4">
-                    <article class="kartica-utisak">
-                        <p class="utisak-tekst"><?= e($u['tekst']) ?></p>
-                        <div class="utisak-autor">
-                            <strong><?= e($u['ime']) ?></strong>
-                            <small><?= e($u['lokacija']) ?></small>
-                        </div>
-                    </article>
-                </div>
-            <?php endforeach; ?>
-        </div>
-    </div>
-</section>
-
 <!-- ============ KONTAKT ============ -->
-<section class="odeljak" id="kontakt">
+<section class="odeljak odeljak-sivi" id="kontakt">
     <div class="container">
         <div class="row g-5">
             <div class="col-lg-5">

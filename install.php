@@ -112,7 +112,7 @@ if ($potvrdjeno) {
         // Provera rezultata
         $pdo->exec('USE `' . DB_NAME . '`');
 
-        foreach (['korisnici', 'usluge', 'radovi', 'utisci', 'upiti'] as $tabela) {
+        foreach (['korisnici', 'usluge', 'radovi', 'rad_slike', 'upiti'] as $tabela) {
             $broj = (int) $pdo->query('SELECT COUNT(*) FROM `' . $tabela . '`')->fetchColumn();
             $poruke[] = 'Tabela ' . $tabela . ': ' . $broj . ' zapisa';
         }

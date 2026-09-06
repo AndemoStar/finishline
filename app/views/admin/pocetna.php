@@ -1,30 +1,23 @@
 <div class="row g-3 mb-4">
-    <div class="col-6 col-lg-3">
+    <div class="col-6 col-lg-4">
         <a href="<?= url('admin/upiti?status=nov') ?>" class="admin-kartica akcenat">
             <span class="admin-kartica-ikona"><i class="bi bi-envelope-exclamation"></i></span>
             <span class="admin-kartica-broj"><?= (int) $brojNovih ?></span>
             <span class="admin-kartica-opis">novih upita</span>
         </a>
     </div>
-    <div class="col-6 col-lg-3">
+    <div class="col-6 col-lg-4">
         <a href="<?= url('admin/upiti?status=u_obradi') ?>" class="admin-kartica">
             <span class="admin-kartica-ikona"><i class="bi bi-hourglass-split"></i></span>
             <span class="admin-kartica-broj"><?= (int) $brojUObradi ?></span>
             <span class="admin-kartica-opis">u obradi</span>
         </a>
     </div>
-    <div class="col-6 col-lg-3">
+    <div class="col-6 col-lg-4">
         <a href="<?= url('admin/radovi') ?>" class="admin-kartica">
             <span class="admin-kartica-ikona"><i class="bi bi-images"></i></span>
             <span class="admin-kartica-broj"><?= (int) $brojRadova ?></span>
             <span class="admin-kartica-opis">radova u galeriji</span>
-        </a>
-    </div>
-    <div class="col-6 col-lg-3">
-        <a href="<?= url('admin/utisci') ?>" class="admin-kartica">
-            <span class="admin-kartica-ikona"><i class="bi bi-chat-quote"></i></span>
-            <span class="admin-kartica-broj"><?= (int) $brojUtisaka ?></span>
-            <span class="admin-kartica-opis">utisaka klijenata</span>
         </a>
     </div>
 </div>
@@ -103,9 +96,6 @@
                 </a>
                 <a href="<?= url('admin/usluge') ?>" class="dugme dugme-obrub-tamni w-100 mb-2">
                     <i class="bi bi-pencil"></i> Uredi usluge
-                </a>
-                <a href="<?= url('admin/utisci') ?>" class="dugme dugme-obrub-tamni w-100">
-                    <i class="bi bi-check2-square"></i> Odobri utiske
                 </a>
             </div>
         </div>

@@ -1,6 +1,6 @@
 <?php
 $naslov        = 'O nama';
-$podnaslov     = 'Ekipa za završne građevinske radove iz Novog Sada.';
+$podnaslov     = 'Ekipa za završne građevinske radove iz Velike Plane.';
 $putanjaStavke = ['O nama' => null];
 require APP_ROOT . '/app/views/partials/naslov-strane.php';
 ?>
@@ -18,7 +18,7 @@ require APP_ROOT . '/app/views/partials/naslov-strane.php';
                 <span class="nadnaslov">Naša priča</span>
                 <h2>Počeli smo od jednog stana</h2>
                 <p>
-                    Finish Line je osnovan 2014. godine u Novom Sadu. Prvi posao bio je gletovanje
+                    Finish Line je osnovan 2014. godine u Velikoj Plani. Prvi posao bio je gletovanje
                     jednosobnog stana na Limanu. Danas ekipa broji šest ljudi, a najveći deo posla
                     i dalje dolazi preko preporuke ranijih klijenata.
                 </p>
@@ -34,7 +34,7 @@ require APP_ROOT . '/app/views/partials/naslov-strane.php';
                 </p>
 
                 <div class="potpis">
-                    <strong>Andrija Kostić</strong>
+                    <strong>Miloš Kostić</strong>
                     <span>osnivač i vođa ekipe</span>
                 </div>
             </div>

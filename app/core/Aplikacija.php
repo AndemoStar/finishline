@@ -80,13 +80,11 @@ final class Aplikacija
         $r->dodaj('admin/radovi/sacuvaj',  'AdminController', 'sacuvajRad');
         $r->dodaj('admin/usluge',          'AdminController', 'usluge');
         $r->dodaj('admin/usluge/sacuvaj',  'AdminController', 'sacuvajUslugu');
-        $r->dodaj('admin/utisci',          'AdminController', 'utisci');
 
         // --- Web servisi (REST, odgovaraju u JSON formatu) --------------
         $r->dodaj('api/usluge',            'ApiController', 'usluge');
         $r->dodaj('api/radovi',            'ApiController', 'radovi');
         $r->dodaj('api/radovi/{id}',       'ApiController', 'rad');
-        $r->dodaj('api/utisci',            'ApiController', 'utisci');
         $r->dodaj('api/statistika',        'ApiController', 'statistika');
         $r->dodaj('api/upiti',             'ApiController', 'upiti');
         $r->dodaj('api/upiti/{id}/status', 'ApiController', 'statusUpita');

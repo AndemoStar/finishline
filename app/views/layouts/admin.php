@@ -34,7 +34,7 @@ $k = Auth::korisnik();
 
         <nav class="admin-meni">
             <span class="admin-meni-naslov">Pregled</span>
-            <a href="<?= url('admin') ?>" class="<?= aktivna('admin') && !aktivna('admin/upiti') && !aktivna('admin/radovi') && !aktivna('admin/usluge') && !aktivna('admin/utisci') ? 'aktivan' : '' ?>">
+            <a href="<?= url('admin') ?>" class="<?= aktivna('admin') && !aktivna('admin/upiti') && !aktivna('admin/radovi') && !aktivna('admin/usluge') ? 'aktivan' : '' ?>">
                 <i class="bi bi-speedometer2"></i> Početna
             </a>
 
@@ -49,9 +49,6 @@ $k = Auth::korisnik();
             </a>
             <a href="<?= url('admin/usluge') ?>" class="<?= aktivna('admin/usluge') ? 'aktivan' : '' ?>">
                 <i class="bi bi-list-check"></i> Usluge
-            </a>
-            <a href="<?= url('admin/utisci') ?>" class="<?= aktivna('admin/utisci') ? 'aktivan' : '' ?>">
-                <i class="bi bi-chat-quote"></i> Utisci
             </a>
 
             <span class="admin-meni-naslov">Sajt</span>

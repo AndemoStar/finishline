@@ -93,19 +93,8 @@ CREATE TABLE `rad_slike` (
         REFERENCES `radovi` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- ---------------------------------------------------------------------
--- Utisci klijenata
--- ---------------------------------------------------------------------
+-- Tabela iz ranije verzije projekta, vise se ne koristi
 DROP TABLE IF EXISTS `utisci`;
-CREATE TABLE `utisci` (
-    `id`       INT UNSIGNED NOT NULL AUTO_INCREMENT,
-    `ime`      VARCHAR(100) NOT NULL,
-    `lokacija` VARCHAR(100) NOT NULL DEFAULT '',
-    `tekst`    TEXT NOT NULL,
-    `odobren`  TINYINT(1) NOT NULL DEFAULT 0,
-    `kreiran`  DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ---------------------------------------------------------------------
 -- Upiti posetilaca (zahtevi za ponudu)
@@ -185,7 +174,7 @@ INSERT INTO `radovi` (`id`, `naziv`, `usluga_id`, `opis`, `slika`, `lokacija`, `
  'Gletovanje i krečenje kompletnog stana pred useljenje. Radovi izvedeni u kontinuitetu, bez zastoja, uz svakodnevno čišćenje.',
  'img/rad-07.jpg', 'Novi Sad', 56, 5, 2025, 0, 1),
 (8, 'Mikrocement u kupatilu', 4,
- 'Obrada zidova kupatila mikrocementom bez fuga, sa zaštitnim premazom otpornim na vodu.',
+ 'Priprema i obrada zidova kupatila, vlagootporne ploče i završna obrada otporna na vodu.',
  'img/rad-08.jpg', 'Novi Sad', 18, 4, 2025, 0, 1),
 (9, 'Lokal u centru grada', 2,
  'Krečenje i sitne popravke pred otvaranje lokala. Radovi izvedeni noću, da se ne remeti rad susednih objekata.',
@@ -193,16 +182,6 @@ INSERT INTO `radovi` (`id`, `naziv`, `usluga_id`, `opis`, `slika`, `lokacija`, `
 (10, 'Potkrovlje, Futog', 3,
  'Obloga kosina gipsanim pločama sa termo izolacijom, izrada niša i priprema za krečenje.',
  'img/rad-10.jpg', 'Futog', 64, 9, 2024, 0, 1);
-
--- Utisci ------------------------------------------------------------
-INSERT INTO `utisci` (`ime`, `lokacija`, `tekst`, `odobren`) VALUES
-('Milica Jovanović', 'Novi Sad', 'Zidovi su ispali savršeno ravni, a ekipa je za sobom ostavila čist stan. Rok od nedelju dana je ispoštovan u dan.', 1),
-('Nenad Popović', 'Sremska Kamenica', 'Tražio sam ponudu preko sajta i dobio odgovor isti dan. Cena se nije menjala nakon izlaska na teren, što mi je bilo najvažnije.', 1),
-('Jelena Marić', 'Beograd', 'Venecijaner u trpezariji izgleda bolje nego na slikama koje su mi pokazali. Vidi se da ljudi znaju posao.', 1),
-('Dragan Ilić', 'Novi Sad', 'Korektna ekipa i uredno izveden posao. Jedan dan kašnjenja zbog isporuke materijala, ali su nadoknadili preko vikenda.', 1),
-('Ana Stanković', 'Petrovaradin', 'Imali smo problem sa vlagom godinama. Sanirali su zid kako treba i posle dve zime nema tragova.', 1),
-('Marko Đurić', 'Futog', 'Spušteni plafon sa rasvetom je urađen tačno po dogovoru. Preporučujem svakome.', 1),
-('Sonja Kovačević', 'Novi Sad', 'Zadovoljna sam kvalitetom, komunikacija je mogla biti malo brža.', 0);
 
 -- Upiti (demo) --------------------------------------------------------
 INSERT INTO `upiti` (`ime`, `email`, `telefon`, `usluga_id`, `kvadratura`, `poruka`, `procena`, `status`, `kreiran`) VALUES

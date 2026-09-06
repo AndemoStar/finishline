@@ -18,7 +18,6 @@ Aplikacija ima **javni** i **interni** deo.
 - **Usluge i cenovnik** — podaci se čitaju iz baze, svaka usluga ima svoju stranu.
 - **Galerija izvedenih radova** sa filtriranjem po usluzi i dugmetom „Učitaj još“ —
   oboje rade preko web servisa, strana se ne osvežava.
-- **Utisci klijenata** — prikazuju se samo oni koje administrator odobri.
 - **Forma za upit** koja se šalje Ajax-om, sa proverom podataka na serveru
   i ispisom grešaka po poljima.
 
@@ -29,7 +28,6 @@ Aplikacija ima **javni** i **interni** deo.
 - Unos i izmena **radova** u galeriji, sa **otpremanjem fotografija kroz web servis**
   (prevlačenjem slike ili izborom fajla, uz prikaz napretka otpremanja).
 - Izmena **usluga i cena**.
-- Odobravanje **utisaka** pre nego što se pojave na sajtu.
 
 ---
 
@@ -71,7 +69,7 @@ app/
     pomocne.php           pomoćne funkcije za prikaze
 
   models/                 JEDINO mesto na kom se piše SQL
-    Korisnik.php  Usluga.php  Rad.php  Utisak.php  Upit.php
+    Korisnik.php  Usluga.php  Rad.php  Upit.php
 
   controllers/            primaju zahtev, zovu model, biraju prikaz
     HomeController.php    UslugeController.php   RadoviController.php
@@ -106,7 +104,6 @@ u prikazima nema poslovne logike.
 | `usluge` | usluge sa cenom po jedinici mere |
 | `radovi` | izvedeni radovi, povezani sa uslugom (strani ključ) |
 | `rad_slike` | dodatne fotografije rada, otpremljene kroz web servis |
-| `utisci` | utisci klijenata, uz polje za odobrenje |
 | `upiti` | upiti poslati sa sajta, sa statusom obrade |
 
 ---
@@ -120,7 +117,6 @@ Svi servisi vraćaju JSON u obliku `{ "uspeh": true|false, "podaci": ..., "poruk
 | GET | `api/usluge` | spisak usluga | javno |
 | GET | `api/radovi?usluga=3&limit=9&pomak=0` | radovi, filtriranje i stranannje | javno |
 | GET | `api/radovi/{id}` | jedan rad sa fotografijama | javno |
-| GET | `api/utisci?limit=6` | odobreni utisci | javno |
 | GET | `api/statistika` | brojevi za početnu stranu | javno |
 | POST | `api/procena` | procena cene po kvadraturi | javno |
 | POST | `api/upiti` | slanje upita sa sajta | javno + CSRF |

@@ -19,7 +19,6 @@ final class AdminController extends Controller
     {
         $upiti  = $this->model('Upit');
         $radovi = $this->model('Rad');
-        $utisci = $this->model('Utisak');
 
         $this->prikaz('admin/pocetna', [
             'naslovStrane' => 'Administracija - ' . APP_NAME,
@@ -28,7 +27,6 @@ final class AdminController extends Controller
             'brojZavrsen'  => $upiti->brojPoStatusu('zavrsen'),
             'brojRadova'   => $radovi->prebroj(),
             'brojUsluga'   => $this->model('Usluga')->prebrojAktivne(),
-            'brojUtisaka'  => $utisci->prebroj(),
             'poDanima'     => $upiti->poDanima(14),
             'poslednji'    => array_slice($upiti->svi(), 0, 6),
         ], 'admin');
@@ -195,34 +193,5 @@ final class AdminController extends Controller
 
         poruka('uspeh', 'Usluga je sačuvana.');
         $this->preusmeri('admin/usluge');
-    }
-
-    // --- Utisci ---------------------------------------------------------
-
-    public function utisci(): void
-    {
-        $model = $this->model('Utisak');
-
-        if ($this->jePost()) {
-            $this->zahtevajCsrf();
-
-            $id     = $this->ceoBroj('id', 0);
-            $radnja = (string) $this->unos('radnja', '');
-
-            if ($radnja === 'obrisi') {
-                $model->obrisi($id);
-                poruka('uspeh', 'Utisak je obrisan.');
-            } else {
-                $model->promeniOdobrenje($id, $radnja === 'odobri');
-                poruka('uspeh', $radnja === 'odobri' ? 'Utisak je objavljen.' : 'Utisak je sklonjen sa sajta.');
-            }
-
-            $this->preusmeri('admin/utisci');
-        }
-
-        $this->prikaz('admin/utisci', [
-            'naslovStrane' => 'Utisci - administracija',
-            'utisci'       => $model->svi(),
-        ], 'admin');
     }
 }

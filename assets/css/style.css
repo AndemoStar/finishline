@@ -504,19 +504,6 @@ img { max-width: 100%; height: auto; display: block; }
 .lista-prednosti strong { display: block; color: var(--mastilo); font-weight: 550; }
 .lista-prednosti div { font-size: .92rem; color: var(--tekst-blagi); }
 
-/* --- Utisci ---------------------------------------------------------- */
-
-.kartica-utisak {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    padding: 26px 0 0;
-    border-top: 2px solid var(--mastilo);
-}
-.utisak-tekst { font-size: .97rem; color: var(--tekst); flex-grow: 1; margin-bottom: 18px; }
-.utisak-autor strong { display: block; font-size: .93rem; color: var(--mastilo); font-weight: 550; }
-.utisak-autor small { color: var(--tekst-blagi); font-size: .85rem; }
-
 /* --- Forme ----------------------------------------------------------- */
 
 .okvir-forme {

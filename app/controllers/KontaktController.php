@@ -15,7 +15,7 @@ final class KontaktController extends Controller
         unset($_SESSION['greske_upit']);
 
         $this->prikaz('kontakt/index', [
-            'naslovStrane' => 'Kontakt i besplatna procena - ' . APP_NAME,
+            'naslovStrane' => 'Kontakt i procena - ' . APP_NAME,
             'opisStrane'   => 'Pozovite nas ili pošaljite upit. Odgovaramo u roku od 24 sata, izlazak na teren je besplatan.',
             'usluge'       => $this->model('Usluga')->aktivne(),
             'greske'       => $greske,
